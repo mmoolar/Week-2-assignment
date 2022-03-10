@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <head></head>
 <script src="myscript.js"></script>
+<link href="stylesheet.css" rel="stylesheet"  type="text/css">
 <body>
+<div class="background-image">
         <h1>What The Facts!!</h1>
         <p>Fact is, most people know the date they were born but a many don't know the <b>day</b> of the week they were born. </p>
         <p>Amazing thing is i can tell you this plus there more..., yes i will also give you the name you would be given if you were born in Ghana.</p>
@@ -13,14 +15,15 @@
         <p>Enter your birthday</b> (then hit the &quot;Submit&quot; button):</p>
           
       <form>
-        <ol><p>Date of Birth: <input type="text" id="birthDay"><br></p>
+        <p>Date of Birth: <input type="text" id="birthDay"><br></p>
         <p>Month: <input type="text" id="birthMonth"></p>
         <p>Year: <input type="text" id="birthYear"></p>
-        <p>Gender: <input type="text" id="birthGender"></p></ol>
+        <p>Gender: <input type="text" id="birthGender"></p>
+        <input type="reset" value="Clear"></button>
     </form>
 
-      <button type="submit" onclick="handleClick()">Submit</button>
+      <button type="submit" onclick="handleClick()">Submit</button> 
 
-      <p id="resultHere">Display answer here</p> 
-    
+      
+    </div>
 </body>

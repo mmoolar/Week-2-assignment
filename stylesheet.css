@@ -1,0 +1,15 @@
+h1 {
+    color: black;
+    text-align: left;
+  }
+  Body {
+    color: black;
+    text-align: left;
+    
+  }
+.background-image {
+background-image: url("/images/Ghana.jpeg");
+background-size:600px;
+background-repeat: no-repeat;
+background-position: right;
+}ß
