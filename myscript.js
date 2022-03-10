@@ -54,14 +54,14 @@ const handleClick = () => {
         } else if (birthMonth == 2 && birthDay > 29) {
             alert("invalid day of month")
         } else if (birthYear == 0 || birthYear <= 1900) {
-                alert("You're kidding right?!! Try again")
+                alert("You're kidding right?!! Enter correct Year and Try again")
+        } else if (birthGender == 0 ){
+            alert('Please Select your gender')
         } else {
             // Execute calculation
             const akanName = akanNameCalculator(centuryVar, yearVar, birthMonth, birthDay, birthGender);
             alert(`Your Akan name is ${akanName.name} born on ${akanName.day}`)
         }
-    } else {
-        alert('Please enter either Male or Female in the gender box')
-    }
+    } 
 }
 
