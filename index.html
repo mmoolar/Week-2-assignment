@@ -11,17 +11,16 @@
         <b>
         
         <p>Enter your birthday</b> (then hit the &quot;Submit&quot; button):</p>
-        
-        <form>
-          <p>Numeric Month (1-12): <input TYPE="text" NAME="month" SIZE="2"> </p>
-          <p>Date of the Month (1-31): <input TYPE="text" NAME="day" SIZE="2"> </p>
-          <p>Year (eg. 1990): <input TYPE="text" NAME="year" SIZE="4"> </p>
-          <p><input TYPE="button" VALUE="Submit" ONCLICK="compute(this.form)"> <input TYPE="reset"
-          VALUE="Clear"> </p>
-          <p>Date of Birth: <input TYPE="text" NAME="result1" SIZE="18"> </p>
-          <p>Day of Week: <input TYPE="text" NAME="result2" SIZE="18"> </p>
-          <p>Your Akan Name is: <input TYPE="text" NAME="result3" SIZE="18"> </p>
-        </form>
-        
+          
+      <form>
+        <ol><p>Date of Birth: <input type="text" id="birthDay"><br></p>
+        <p>Month: <input type="text" id="birthMonth"></p>
+        <p>Year: <input type="text" id="birthYear"></p>
+        <p>Gender: <input type="text" id="birthGender"></p></ol>
+    </form>
+
+      <button type="submit" onclick="handleClick()">Submit</button>
+
+      <p id="resultHere">Display answer here</p> 
     
 </body>

@@ -1,92 +1,58 @@
+const akanNameCalculator = (CC, YY, MM, DD, gender) => {
+    // BODMAS
+    const calculationResult = (((CC / 4) - 2 * CC - 1) + ((5 * YY / 4)) + ((26 * (MM + 1) / 10)) + DD) % 7
+    let wholeNumber = Number(calculationResult.toFixed())
 
-<!-- begin script
+    const maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"]
+    const femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"]
+    const daysOfTheWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
-//General Array Function
-function MakeArray(n) {
-   this.length = n;
-   for (var i = 1; i <=n; i++) {
-     this[i] = 0;
-   }
+    if (wholeNumber >= 7) {
+        
+        wholeNumber = wholeNumber - 1;
+    }
+
+    if (gender == 'Male') {
+        return { 'name': maleNames[wholeNumber], 'day': daysOfTheWeek[wholeNumber] };
+    } else {
+        return { 'name': femaleNames[wholeNumber], 'day': daysOfTheWeek[wholeNumber] };
+    }
 }
 
-//Initialize Days of Week Array
-days = new MakeArray(7);
-days[0] = "Saturday"
-days[1] = "Sunday"
-days[2] = "Monday"
-days[3] = "Tuesday"
-days[4] = "Wednesday"
-days[5] = "Thursday"
-days[6] = "Friday"
 
-//Initialize Months Array
-months = new MakeArray(12);
-months[1] = "January" 
-months[2] = "February" 
-months[3] = "March" 
-months[4] = "April" 
-months[5] = "May" 
-months[6] = "June" 
-months[7] = "July" 
-months[8] = "August"
-months[9] = "September" 
-months[10] = "October"
-months[11] = "November"
-months[12] = "December"
+const handleClick = () => {
+    // Step One - Retrieve refrence to HTML elements
+    const birthDayBox = document.getElementById("birthDay")
+    const birthMonthBox = document.getElementById("birthMonth")
+    const birthYearBox = document.getElementById("birthYear")
+    const birthGenderBox = document.getElementById("birthGender")
 
-//Male Ghanian names
-malename = new MakeArray(7);
-malename[1] ="Kwasi"
-malename[2] ="Kwadwo"
-malename[3] ="Kwabena"
-malename[4] ="Kwaku"
-malename[5] ="Yaw"
-malename[6] ="Kofi"
-malename[7] ="Kwame"
+    // Step Two - Retrieve input elements values
+    const birthDay = birthDayBox.value;
+    const birthMonth = birthMonthBox.value;
+    const birthYear = birthYearBox.value;
+    const birthGender = birthGenderBox.value;
 
-//Ghanian female names
-femalename =new MakeArray(7);
-femalename[1] ="Akosua"
-femalename[2] ="Adwoa"
-femalename[3] ="Abenaa"
-femalename[4] ="Akua"
-femalename[5] ="Yaa"
-femalename[6] ="Afua"
-femalename[7] ="Ama"
-
-//Day of Week Function
-    (form) => {
-        var val1 = parseInt(form.day.value, 10);
-        if ((val1 < 0) || (val1 > 31)) {
-            alert("Day is out of range");
+    // Check user gender
+    const allGendersArray = ["Male", "Female"]
+    if (allGendersArray.includes(birthGender)) {
+        // CC = Century
+        // YY = Year
+        // 1989
+        const centuryVar = String(birthYear).substring(0, 2)
+        const yearVar = String(birthYear).substring(2)
+            // Check that day and month are valid
+        if (birthDay <= 0 || birthDay > 31) {
+            alert('Please enter a valid Day')
+        } else if (birthMonth <= 0 || birthMonth > 12) {
+            alert('Please enter a valid month')
+        } else {
+            // Execute calculation
+            const akanName = akanNameCalculator(centuryVar, yearVar, birthMonth, birthDay, birthGender);
+            alert(`Your Akan name is ${akanName.name} born on ${akanName.day}`)
         }
-        var val2 = parseInt(form.month.value, 10);
-        if ((val2 < 0) || (val2 > 12)) {
-            alert("Month is out of range");
-        }
-        var val2x = parseInt(form.month.value, 10);
-        var val3 = parseInt(form.year.value, 10);
-        if (val3 < 1900) {
-            alert("You're that old!");
-        }
-        if (val2 == 1) {
-            val2x = 13;
-            val3 = val3 - 1;
-        }
-        if (val2 == 2) {
-            val2x = 14;
-            val3 = val3 - 1;
-        }
-        var val4 = parseInt(((val2x + 1) * 3) / 5, 10);
-        var val5 = parseInt(val3 / 4, 10);
-        var val6 = parseInt(val3 / 100, 10);
-        var val7 = parseInt(val3 / 400, 10);
-        var val8 = val1 + (val2x * 2) + val4 + val3 + val5 - val6 + val7 + 2;
-        var val9 = parseInt(val8 / 7, 10);
-        var val0 = val8 - (val9 * 7);
-        form.result1.value = months[val2] + " " + form.day.value + ", " + form.year.value;
-        form.result2.value = days[val0];
-    }   
-
-// end script -->
+    } else {
+        alert('Please enter either Male or Female in the gender box')
+    }
+}
 
