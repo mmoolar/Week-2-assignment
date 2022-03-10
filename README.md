@@ -3,6 +3,8 @@ Independent project 2
 ## Project Name
 Akan Name Determiner based on the day of the week one was born.
 
+https://mmoolar.github.io/Week-2-assignment
+
 ## Description
 In Ghana, people name their children after the day of the week they were born. The names are known as the Akan Names. This is a web application that takes a user's birthday, calculates the day of the week they were born and then depending on their gender outputs their Akan Name.
 ## Author
