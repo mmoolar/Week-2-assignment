@@ -1,11 +1,14 @@
 h1 {
     color: black;
     text-align: left;
+    font-family: cursive;
+    font-size: 50pt;
   }
   Body {
     color: black;
     text-align: left;
-    
+    font-family: fantasy;
+    font-size: 20pt;
   }
 .background-image {
 background-image: url("/images/Ghana.jpeg");
