@@ -12,9 +12,14 @@ const akanNameCalculator = (CC, YY, MM, DD, gender) => {
         wholeNumber = wholeNumber - 1;
     }
 
-    if (gender == 'Male') {
+ 
+    if (document.getElementById("birthGender").checked) {
+        var gender = 'male';
+      
         return { 'name': maleNames[wholeNumber], 'day': daysOfTheWeek[wholeNumber] };
-    } else {
+    } else if (document.getElementById("birthGender2").checked) {
+        var gender = 'Female';
+    
         return { 'name': femaleNames[wholeNumber], 'day': daysOfTheWeek[wholeNumber] };
     }
 }
@@ -43,7 +48,7 @@ const handleClick = () => {
         const yearVar = String(birthYear).substring(2)
             // Check that day and month are valid
         if (birthDay <= 0 || birthDay > 31) {
-            alert('Please enter a valid Day')
+            alert('Please enter a valid Date')
         } else if (birthMonth <= 0 || birthMonth > 12) {
             alert('Please enter a valid month')
         } else {

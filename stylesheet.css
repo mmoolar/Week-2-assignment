@@ -8,11 +8,11 @@ h1 {
     color: black;
     text-align: left;
     font-family: fantasy;
-    font-size: 20pt;
+    font-size: 15pt;
   }
 .background-image {
 background-image: url("/images/Ghana.jpeg");
 background-size:600px;
 background-repeat: no-repeat;
-background-position: right;
-}ß
+background-position: bottom right;
+}
