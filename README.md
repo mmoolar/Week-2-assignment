@@ -18,7 +18,7 @@ Javascript
 Bootstrap
 
 ## Known Bugs
-Gender text must be entered with first letter in caps (Female)
+Wont work unless gender is selected, have not validated that yet.
 
 ## Support and contact details
 Want to contribute? Great!
