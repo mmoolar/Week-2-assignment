@@ -11,7 +11,7 @@ h1 {
     font-size: 15pt;
   }
 .background-image {
-background-image: url("/images/Ghana.jpeg");
+background-image: url('images/Ghana.jpeg');
 background-size:600px;
 background-repeat: no-repeat;
 background-position: bottom right;
